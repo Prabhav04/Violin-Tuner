@@ -1,6 +1,6 @@
 # Violin Tuner Web Application
 
-![Violin Tuner Screenshot](Screenshot.png) 
+![Violin Tuner Screenshot](/image_assetsScreenshot.png) 
 
 A web-based violin tuner with interactive audio playback and real-time pitch detection to help musicians tune their instruments accurately.
 
