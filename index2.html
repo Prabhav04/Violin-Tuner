@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>Violin Tuner</title>
+    <link rel="stylesheet" href="violin.css"/>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<canvas id="particleCanvas"></canvas>
+<audio src="Audio%20Files/Gaud.wav" id="GAud" class="audio" controls loop></audio>
+<audio src="Audio%20Files/Eaud.wav" id="EAud" class="audio" controls loop></audio>
+<audio src="Audio%20Files/Aaud.wav" id="AAud" class="audio" controls loop></audio>
+<audio src="Audio%20Files/Daud.wav" id="DAud" class="audio" controls loop></audio>
+<audio src="Audio%20Files/click.wav" id="metronomeClick"></audio>
+
+<div class="top-cont">
+    <h1 class="h1">VIOLIN</h1>
+    <img class="violin" src="image_assets/bowed-instrument.png"/>
+    <h1 class="h2">TUNER</h1>
+</div>
+
+<div class="abt-cont">
+    <h4 class="abt">
+        <div class="menu">This is a Violin Tuner, Tune your strings to the appropriate frequency.</div>
+        About
+    </h4>
+</div>
+
+<div class="bottom-cont">
+    <div class="box1 box"><button class="notes" id="btnG" onclick="toggleAudio('GAud', 'btnG')">G</button></div>
+    <div class="box2 box"><button class="notes" id="btnD" onclick="toggleAudio('DAud', 'btnD')">D</button></div>
+    <div class="box3 box"><button class="notes" id="btnA" onclick="toggleAudio('AAud', 'btnA')">A</button></div>
+    <div class="box4 box"><button class="notes" id="btnE" onclick="toggleAudio('EAud', 'btnE')">E</button></div>
+</div>
+
+<div class="metronome-cont">
+    <div class="displaymetronome">Metronome(BPM)</div>
+    <img class="timersvg" src="image_assets/metronomewhite.png"/>
+    <div class="playpause-cont">
+        <input type="number" id="bpmInput" value="100" min="30" max="240" />
+        <button id="metronomeToggle" onclick="toggleMetronome()">Play</button>
+    </div>
+    <svg class="timenoti" width="40" height="40">
+        <circle cx="20" cy="20" r="10" fill="white" opacity="0.25" />
+    </svg>
+</div>
+<div class="tuning-cont">
+    <button onclick="initMic()">Start Tuning</button>
+    <div id="pitchOutput" class="pitchOutput">Pitch: </div>
+    <button id="stopRecordingButton" class ="stoprec" onclick="stopRecording()">Stop Recording</button>
+
+</div>
+
+
+
+<script src="vtuner.js"></script>
+</body>
+</html>
